@@ -34,7 +34,6 @@ public class FileReader {
         }
     }
 
-
     //public static void main(String[] args) {       // ДЛЯ ПРОВЕРКИ
     //    FileReader fileReader = new FileReader();
     //    fileReader.readAFile("Введите текст");
