@@ -2,7 +2,6 @@
 public class Team {
     private int numberOfParticipants;
     private String title;
-    CarPark box;
     RacingCar racingCar;
     TruckCar truckCar1;
     TruckCar truckCar2;
@@ -29,13 +28,5 @@ public class Team {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public CarPark getBox() {
-        return box;
-    }
-
-    public void setBox(CarPark box) {
-        this.box = box;
     }
 }

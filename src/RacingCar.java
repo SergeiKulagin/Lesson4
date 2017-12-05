@@ -4,7 +4,7 @@ public class RacingCar extends Car {
     public RacingCar() {
     }
 
-    public void horn () {
+    public void horn() {
         System.out.println("бииип");
     }
 }

@@ -31,4 +31,20 @@ public final class UserHelper {
         return a1 + b.toString() + a2 + a3;
     }
 
+    static public String [] randomMassiveNumbers (int numberCar){     // создаю массив случайных неповтор€ющихс€ автономеров
+        String [] numberCarNumbers = new String [numberCar];
+        int count = 0;
+        numberCarNumbers [0] = UserHelper.generateNumber();
+        while (count < numberCar){
+            count = count + 1;
+            int locCount = count;
+            numberCarNumbers [count] = UserHelper.generateNumber();
+            for (int k = 0; k < numberCarNumbers.length; k++){
+                if (numberCarNumbers[locCount].equals(numberCarNumbers[k])){
+                    count = count - 1;
+                }
+            }
+        }
+        return numberCarNumbers;
+    }
 }
