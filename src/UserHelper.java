@@ -48,7 +48,7 @@ public final class UserHelper {
         return numberCarNumbers;
     }
 
-    public File readAFile(String[] listCarNumbers) {
+    static public File readAFile(String[] listCarNumbers) {
 
         File newFile = new File("C:\\Users\\User\\Desktop\\myFile.txt");
         try {
@@ -68,7 +68,7 @@ public final class UserHelper {
             writer.flush();
             writer.close();
         } catch (Exception e) {
-            Logger.getLogger(CheckInSystem.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(UserHelper.class.getName()).log(Level.SEVERE, null, e);
         }
         return newFile;
     }

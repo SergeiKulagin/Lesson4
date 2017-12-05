@@ -1,12 +1,21 @@
 public class Box extends CarPark {
 
-    private Team team;
+    private String teamUseName;
 
-    public Team getTeam() {
-        return team;
+
+    public Box() {
+        super.setSizeLimit(3);
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
+    public String getTeamUseName() {
+        return teamUseName;
+    }
+
+    public void setTeamUseName(String teamUseName) {
+        this.teamUseName = teamUseName;
+    }
+
+    public void registrationTeamCars (String teamName){             // метод для регистрации машин команд по боксам
+
     }
 }
