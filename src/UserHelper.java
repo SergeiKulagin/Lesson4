@@ -1,7 +1,7 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public final class UserHelper {
 
@@ -46,5 +46,30 @@ public final class UserHelper {
             }
         }
         return numberCarNumbers;
+    }
+
+    public File readAFile(String[] listCarNumbers) {
+
+        File newFile = new File("C:\\Users\\User\\Desktop\\myFile.txt");
+        try {
+            if (!newFile.exists()) {
+                newFile.createNewFile();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        FileWriter writer;
+        try {
+            writer = new FileWriter(newFile);
+            for (String line : listCarNumbers) {
+                writer.write(line);
+                writer.write(System.getProperty("line.separator"));
+            }
+            writer.flush();
+            writer.close();
+        } catch (Exception e) {
+            Logger.getLogger(CheckInSystem.class.getName()).log(Level.SEVERE, null, e);
+        }
+        return newFile;
     }
 }

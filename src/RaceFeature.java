@@ -23,6 +23,8 @@ public class RaceFeature {
         for (int count = 0; count < numbersTeam; count++) {
             AutoCar car = new AutoCar(listNumbers[count]);
             raceFeatureCarPark.addCar(car);
+
+            raceFeatureCarPark.getCarNumbersList();
         }
 
     }
