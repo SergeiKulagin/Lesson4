@@ -6,7 +6,6 @@ public class AutoCar extends Car {
     }
 
     public AutoCar(String number) {
-
         this.number = number;
     }
 

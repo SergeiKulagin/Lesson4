@@ -49,7 +49,6 @@ public final class UserHelper {
     }
 
     static public File readAFile(String[] listCarNumbers) {
-
         File newFile = new File("C:\\Users\\User\\Desktop\\myFile.txt");
         try {
             if (!newFile.exists()) {

@@ -10,6 +10,7 @@ public class TruckCar extends Car {
     }
 
     public void horn() {
+
         System.out.println("ахо-ахо");
     }
 }

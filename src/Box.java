@@ -16,6 +16,5 @@ public class Box extends CarPark {
     }
 
     public void registrationTeamCars (String teamName){             // метод для регистрации машин команд по боксам
-
     }
 }

@@ -9,12 +9,10 @@ public class RaceFeature {
     }
 
     public CarPark getRaceFeatureCarPark() {
-
         return raceFeatureCarPark;
     }
 
     public void setRaceFeatureCarPark(CarPark raceFeatureCarPark) {
-
         this.raceFeatureCarPark = raceFeatureCarPark;
     }
 

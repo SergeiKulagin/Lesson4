@@ -14,7 +14,6 @@ public class Team {
     }
 
     public RacingCar getRacingCar() {
-
         return racingCar;
     }
 

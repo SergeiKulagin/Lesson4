@@ -62,6 +62,4 @@ public class CarPark {
             System.out.println("Ќа сто€нке нет машин, которые можно удалить");
         }
     }
-
-
 }
