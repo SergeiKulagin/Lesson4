@@ -1,8 +1,15 @@
 public class TruckCar extends Car {
 
-   private String number;
+    private String number;
 
-    public void horn (){
+    public TruckCar() {
+    }
+
+    public TruckCar(String number) {
+        this.number = number;
+    }
+
+    public void horn() {
         System.out.println("ахо-ахо");
     }
 }
