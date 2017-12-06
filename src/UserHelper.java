@@ -48,7 +48,7 @@ public final class UserHelper {
         return numberCarNumbers;
     }
 
-    static public File readAFile(String[] listCarNumbers) {
+    static public File writeAFile(String[] listCarNumbers) {
         File newFile = new File("C:\\Users\\User\\Desktop\\myFile.txt");
         try {
             if (!newFile.exists()) {
