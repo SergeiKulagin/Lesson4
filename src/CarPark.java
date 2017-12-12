@@ -1,45 +1,38 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CarPark {
-    private int sizeLimit;            // размер сто€нки
-    private ArrayList<Car> carPark;  // машины на сто€нке
-    private File carNumbersList;    // текстовый файл с номерами машин на сто€нке
+    private int carParkSizeLimit;
+    private List<Car> carPark;
+    private File carParkListOfNumbers;
 
-    public ArrayList<Car> getCarPark() {
-        return carPark;
+    public File getCarParkListOfNumbers() {
+        return carParkListOfNumbers;
     }
 
-    public File getCarNumbersList() {
-        return carNumbersList;
+    public void setCarParkListOfNumbers(File carParkListOfNumbers) {
+        this.carParkListOfNumbers = carParkListOfNumbers;
     }
 
-    public void setCarNumbersList(File carNumbersList) {
-        this.carNumbersList = carNumbersList;
+    public int getCarParkSizeLimit() {
+        return carParkSizeLimit;
     }
 
-    public void setCarPark(ArrayList<Car> carPark) {
-        this.carPark = carPark;
+    public void setCarParkSizeLimit(int carParkSizeLimit) {
+        this.carParkSizeLimit = carParkSizeLimit;
     }
 
-    public int getSizeLimit() {
-        return sizeLimit;
-    }
-
-    public void setSizeLimit(int sizeLimit) {
-        this.sizeLimit = sizeLimit;
-    }
-
-    public void addCar(Car car) {                                 // добавл€ю машину
+    public void addCar(Car car) {
         int carParkSize = carPark.size();
-        if (sizeLimit > carParkSize) {
+        if (carParkSizeLimit > carParkSize) {
             carPark.add(car);
         } else {
-            System.out.println("—вободных мест нет");
+            System.out.println("There isn't free places");
         }
     }
 
-    public void removeCar(int numberPlace, String typeCar) {     // удал€ю машину
+    public void removeCar(int numberPlace, String typeCar) {
         int carParkSize = carPark.size();
         if (numberPlace < carParkSize) {
             Car car = carPark.get(numberPlace);
@@ -47,19 +40,19 @@ public class CarPark {
                 if (car instanceof TruckCar) {
                     carPark.remove(numberPlace);
                 } else {
-                    System.out.println("√рузовых машин нет в этом боксе");
+                    System.out.println("There isn't a TruckCar");
                 }
             } else {
                 if (typeCar.equals("auto")) {
                     if (car instanceof AutoCar) {
                         carPark.remove(numberPlace);
                     } else {
-                        System.out.println("Ћегковых машин нет в этом боксе");
+                        System.out.println("There isn't an AutoCar");
                     }
                 }
             }
         } else {
-            System.out.println("Ќа сто€нке нет машин, которые можно удалить");
+            System.out.println("There isn't any Cars");
         }
     }
 }

@@ -1,15 +1,15 @@
 public class AutoCar extends Car {
 
-    private String number;
+    private String autoCarNumber;
 
     public AutoCar() {
     }
 
-    public AutoCar(String number) {
-        this.number = number;
+    public AutoCar(String carNumber) {
+        this.autoCarNumber = carNumber;
     }
 
-    public void horn() {
-        System.out.println("бип-бип");
+    public void toBeep() {
+        System.out.println("bee-beep");
     }
 }

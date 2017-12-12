@@ -1,15 +1,15 @@
-public class RacingCar extends Car {
+public class RacingCar extends AutoCar {
 
-    private String teamsBrand;
+    private String racingCarTeamsName;
 
     public RacingCar() {
     }
 
-    public RacingCar(String teamsBrand) {
-        this.teamsBrand = teamsBrand;
+    public RacingCar(String teamsName) {
+        this.racingCarTeamsName = teamsName;
     }
 
-    public void horn() {
-        System.out.println("бииип");
+    public void toBeep() {
+        System.out.println("beeep");
     }
 }

@@ -2,10 +2,10 @@ import java.util.Random;
 
 abstract class Car {
 
-    private String model;   // модель
-    private String colour;  // цвет
+    private String carModel;
+    private String carColour;
 
-    abstract void horn();
+    abstract void toBeep();
 }
 
 

@@ -1,49 +1,42 @@
 
 public class Team {
-    private String [] numberTeamCars;
-    private String title;
-    private RacingCar racingCar;
-    private SupportCar supportCar1;
-    private SupportCar supportCar2;
+    private String teamTitle;
+    private RacingCar firstTeamRacingCar;
+    private RacingCar secondTeamRacingCar;
+    private SupportCar teamSupportCar;
 
     public Team() {
     }
 
-    public String[] getNumberTeamCars() {
-        return numberTeamCars;
+    public String getTeamTitle() {
+        return teamTitle;
     }
 
-    public Team(String title) {
-        this.title = title;
+    public void setTeamTitle(String teamTitle) {
+        this.teamTitle = teamTitle;
     }
 
-    public void setNumberTeamCars(String[] numberTeamCars) {  // здесь € по списку номеров машин команд их объ€вл€ю
-        this.numberTeamCars = numberTeamCars;
-        String string = numberTeamCars [0];
-        this.racingCar = new RacingCar(string);
-        String string1 = numberTeamCars [1];
-        this.supportCar1 = new SupportCar(string1);
-        String string2 = numberTeamCars [2];
-        this.supportCar2 = new SupportCar(string2);
+    public RacingCar getFirstTeamRacingCar() {
+        return firstTeamRacingCar;
     }
 
-    public RacingCar getRacingCar() {
-        return racingCar;
+    public void setFirstTeamRacingCar(RacingCar firstTeamRacingCar) {
+        this.firstTeamRacingCar = firstTeamRacingCar;
     }
 
-    public SupportCar getSupportCar1() {
-        return supportCar1;
+    public RacingCar getSecondTeamRacingCar() {
+        return secondTeamRacingCar;
     }
 
-    public SupportCar getSupportCar2() {
-        return supportCar2;
+    public void setSecondTeamRacingCar(RacingCar secondTeamRacingCar) {
+        this.secondTeamRacingCar = secondTeamRacingCar;
     }
 
-    public String getTitle() {
-        return title;
+    public SupportCar getTeamSupportCar() {
+        return teamSupportCar;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTeamSupportCar(SupportCar teamSupportCar) {
+        this.teamSupportCar = teamSupportCar;
     }
 }

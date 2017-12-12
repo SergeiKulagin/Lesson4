@@ -1,4 +1,4 @@
-public class SupportCar extends Car {
+public class SupportCar extends TruckCar {
 
     private String kindOfSupport;
 
@@ -7,8 +7,5 @@ public class SupportCar extends Car {
 
     public SupportCar(String kindOfSupport) {
         this.kindOfSupport = kindOfSupport;
-    }
-
-    public void horn() {
     }
 }
