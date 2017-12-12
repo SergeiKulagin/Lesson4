@@ -3,7 +3,7 @@ public class CheckingSystem {
     public static void registerCarsOfTeam () {
 
     }
-    public static void registerCarsOfGuests (){
+    public static void registerCarsOfGuests (Car car){
 
     }
 }

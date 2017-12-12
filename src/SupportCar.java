@@ -8,4 +8,12 @@ public class SupportCar extends TruckCar {
     public SupportCar(String kindOfSupport) {
         this.kindOfSupport = kindOfSupport;
     }
+
+    public String getKindOfSupport() {
+        return kindOfSupport;
+    }
+
+    public void setKindOfSupport(String kindOfSupport) {
+        this.kindOfSupport = kindOfSupport;
+    }
 }

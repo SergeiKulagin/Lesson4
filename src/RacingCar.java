@@ -9,6 +9,14 @@ public class RacingCar extends AutoCar {
         this.racingCarTeamsName = teamsName;
     }
 
+    public String getRacingCarTeamsName() {
+        return racingCarTeamsName;
+    }
+
+    public void setRacingCarTeamsName(String racingCarTeamsName) {
+        this.racingCarTeamsName = racingCarTeamsName;
+    }
+
     public void toBeep() {
         System.out.println("beeep");
     }

@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 public class RaceFeatureUtils {
 
-    static public String getUserInput(String prompt) {
+     public static String getUserInput(String prompt) {
         String inputLine = null;
         System.out.print(prompt + " ");
         try {

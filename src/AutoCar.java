@@ -9,6 +9,14 @@ public class AutoCar extends Car {
         this.autoCarNumber = carNumber;
     }
 
+    public String getAutoCarNumber() {
+        return autoCarNumber;
+    }
+
+    public void setAutoCarNumber(String autoCarNumber) {
+        this.autoCarNumber = autoCarNumber;
+    }
+
     public void toBeep() {
         System.out.println("bee-beep");
     }
