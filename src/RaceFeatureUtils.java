@@ -1,5 +1,11 @@
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import java.util.logging.Level;
@@ -7,7 +13,7 @@ import java.util.logging.Logger;
 
 public class RaceFeatureUtils {
 
-     public static String getUserInput(String prompt) {
+    public static String getUserInput(String prompt) {
         String inputLine = null;
         System.out.print(prompt + " ");
         try {
@@ -49,6 +55,24 @@ public class RaceFeatureUtils {
 
     private static boolean isaBoolean(List<String> numbers, String number) {
         return !numbers.contains(number);
+    }
+
+    public static List<String> readInfoFile() {
+        ArrayList <String> infoAboutTeams = new ArrayList<>();
+        String folderPath = "C://Users//User//Desktop";
+        Path path = Paths.get(folderPath, "infoTeams.txt");
+        Charset charset = Charset.forName("UTF-8");
+        try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String [] infoTeams = line.split(",");
+                infoAboutTeams = new ArrayList<String>(Arrays.asList(infoTeams));
+                System.out.println(infoAboutTeams.get(2));
+                System.out.println(infoAboutTeams.get(3));
+            }
+        } catch (IOException e) {
+        }
+        return infoAboutTeams;
     }
 
     public static File writeFileWithNumbersOfCars(List<String> listCarNumbers) {
