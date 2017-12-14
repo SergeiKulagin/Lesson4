@@ -67,8 +67,6 @@ public class RaceFeatureUtils {
             while ((line = reader.readLine()) != null) {
                 String [] infoTeams = line.split(",");
                 infoAboutTeams = new ArrayList<String>(Arrays.asList(infoTeams));
-                System.out.println(infoAboutTeams.get(2));
-                System.out.println(infoAboutTeams.get(3));
             }
         } catch (IOException e) {
         }
