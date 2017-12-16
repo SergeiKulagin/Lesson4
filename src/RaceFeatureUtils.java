@@ -58,20 +58,39 @@ public class RaceFeatureUtils {
     }
 
     public static List<String> readInfoFile() {
-        ArrayList <String> infoAboutTeams = new ArrayList<>();
+        ArrayList<String> infoAboutTeams = new ArrayList<>();
         String folderPath = "C://Users//User//Desktop";
         Path path = Paths.get(folderPath, "infoTeams.txt");
         Charset charset = Charset.forName("UTF-8");
         try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
             String line;
             while ((line = reader.readLine()) != null) {
-                String [] infoTeams = line.split(",");
+                String[] infoTeams = line.split(",");
                 infoAboutTeams = new ArrayList<String>(Arrays.asList(infoTeams));
             }
         } catch (IOException e) {
         }
         return infoAboutTeams;
     }
+
+    public static List<String> divideTeamTitle() {
+        List<String> infoAboutTeams = RaceFeatureUtils.readInfoFile();
+        List<String> teamTitles = new ArrayList<>();
+        for (int i = 0; i < infoAboutTeams.size(); i = +3) {
+            teamTitles.add(infoAboutTeams.get(i));
+        }
+        return teamTitles;
+    }
+    public static List<String> divideTeamCarsNumbers (){
+        List<String> infoAboutTeams = RaceFeatureUtils.readInfoFile();
+        List<String> teamTitles = RaceFeatureUtils.divideTeamTitle();
+        for (String s : infoAboutTeams){
+            if (!RaceFeatureUtils.isaBoolean(teamTitles, s)) {
+                infoAboutTeams.remove(s);
+            }
+            }
+            return infoAboutTeams;
+        }
 
     public static File writeFileWithNumbersOfCars(List<String> listCarNumbers) {
         File newFile = new File("C:\\Users\\User\\Desktop\\myFile.txt");

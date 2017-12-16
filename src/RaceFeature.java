@@ -5,8 +5,8 @@ public class RaceFeature {
 
     public static void main(String[] args) {
     CarCreator carCreator = new CarCreator();
-    List<Car> listGuestCars = carCreator.createGuestsCar();
-    List<Car> listTeamCars = carCreator.createTeamsCar();
+    List<Car> listGuestCars = carCreator.createGuestCars();
+    List<Car> listTeamCars = carCreator.createTeamCars();
     CheckingSystem.registerCarsOfGuests(listGuestCars);
     CheckingSystem.registerCarsOfTeam(listTeamCars);
     }

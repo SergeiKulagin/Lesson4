@@ -5,6 +5,7 @@ public class CheckingSystem {
 
     public static List<BoxesZone> registerCarsOfTeam(List<Car> teamCars) {
         List <BoxesZone> teamBoxesZone = new ArrayList<>();
+        List<String> infoList = RaceFeatureUtils.divideTeamTitle();
         for (int i = 0; i < teamCars.size(); i=+3){
             BoxesZone boxesZone = new BoxesZone();
             boxesZone.addCar(teamCars.get(i));
