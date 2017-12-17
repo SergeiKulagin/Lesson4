@@ -8,6 +8,10 @@ public class Team {
     public Team() {
     }
 
+    public Team(String teamTitle) {
+        this.teamTitle = teamTitle;
+    }
+
     public String getTeamTitle() {
         return teamTitle;
     }

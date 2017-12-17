@@ -81,16 +81,28 @@ public class RaceFeatureUtils {
         }
         return teamTitles;
     }
-    public static List<String> divideTeamCarsNumbers (){
+
+    public static List<String> divideTeamCarsNumbers() {
         List<String> infoAboutTeams = RaceFeatureUtils.readInfoFile();
         List<String> teamTitles = RaceFeatureUtils.divideTeamTitle();
-        for (String s : infoAboutTeams){
+        for (String s : infoAboutTeams) {
             if (!RaceFeatureUtils.isaBoolean(teamTitles, s)) {
                 infoAboutTeams.remove(s);
             }
-            }
-            return infoAboutTeams;
         }
+        return infoAboutTeams;
+    }
+
+    public static List<Team> createTeams(List<String> teamsTitle) {
+        int capacity = teamsTitle.size();
+        List<Team> teamList = new ArrayList<>(capacity);
+        String title = null;
+        for (int i =0; i < capacity; i++){
+            Team team = new Team(teamsTitle.get(i));
+            teamList.add(team);
+        }
+        return teamList;
+    }
 
     public static File writeFileWithNumbersOfCars(List<String> listCarNumbers) {
         File newFile = new File("C:\\Users\\User\\Desktop\\myFile.txt");

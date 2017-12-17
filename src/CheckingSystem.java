@@ -5,16 +5,21 @@ public class CheckingSystem {
 
     public static List<BoxesZone> registerCarsOfTeam(List<Car> teamCars) {
         List <BoxesZone> teamBoxesZone = new ArrayList<>();
-        List<String> infoList = RaceFeatureUtils.divideTeamTitle();
-        for (int i = 0; i < teamCars.size(); i=+3){
+        List <String> teamsTitle = RaceFeatureUtils.divideTeamTitle();
+        List<Team> teamList = RaceFeatureUtils.createTeams(teamsTitle);
+        for (int i = 0; i < teamsTitle.size(); i++){
             BoxesZone boxesZone = new BoxesZone();
-            boxesZone.addCar(teamCars.get(i));
-            boxesZone.addCar(teamCars.get(i+1));
-            boxesZone.addCar(teamCars.get(i+2));
+            boxesZone.setTeam(teamList.get(i));
+            List <Car> listCar = teamCars.subList(0,2);
+            boxesZone.addCar(listCar.get(0));
+            boxesZone.addCar(listCar.get(1));
+            boxesZone.addCar(listCar.get(2));
             teamBoxesZone.add(boxesZone);
+            teamCars.remove(2);
+            teamCars.remove(1);
+            teamCars.remove(0);
         }
         return teamBoxesZone;
-
     }
 
     public static CarPark registerCarsOfGuests(List<Car> guestCars) {
