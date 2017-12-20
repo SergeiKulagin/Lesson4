@@ -4,20 +4,15 @@ import java.util.List;
 public class CheckingSystem {
 
     public static List<BoxesZone> registerCarsOfTeam(List<Car> teamCars) {
-        List <BoxesZone> teamBoxesZone = new ArrayList<>();
-        List <String> teamsTitle = RaceFeatureUtils.divideTeamTitle();
-        List<Team> teamList = RaceFeatureUtils.createTeams(teamsTitle);
-        for (int i = 0; i < teamsTitle.size(); i++){
+        List<BoxesZone> teamBoxesZone = new ArrayList<>();
+        List<Team> teamList = RaceFeatureUtils.createTeams();
+        for (int i = 0; i < teamList.size(); i++) {
             BoxesZone boxesZone = new BoxesZone();
             boxesZone.setTeam(teamList.get(i));
-            List <Car> listCar = teamCars.subList(0,2);
-            boxesZone.addCar(listCar.get(0));
-            boxesZone.addCar(listCar.get(1));
-            boxesZone.addCar(listCar.get(2));
+            for (int j = (i * 3); j < ((i * 3) + 3); j++) {
+                boxesZone.addCar(teamCars.get(j));
+            }
             teamBoxesZone.add(boxesZone);
-            teamCars.remove(2);
-            teamCars.remove(1);
-            teamCars.remove(0);
         }
         return teamBoxesZone;
     }

@@ -27,6 +27,16 @@ public class RaceFeatureUtils {
         return inputLine;
     }
 
+    public static int[] getCasualCharacteristicRacingCar (){
+        int [] listCharacteristic = new int[3];
+        for (int i = 0; i < 3; i++){
+            Random randomCharacteristic = new Random();
+            int random = randomCharacteristic.nextInt(10) + 1;
+            listCharacteristic[i] = random;
+        }
+        return listCharacteristic;
+     }
+
     public static String createUniqueNumber() {
         Random random = new Random();
         int max = 999;
@@ -93,10 +103,10 @@ public class RaceFeatureUtils {
         return infoAboutTeams;
     }
 
-    public static List<Team> createTeams(List<String> teamsTitle) {
+    public static List<Team> createTeams() {
+        List <String> teamsTitle = RaceFeatureUtils.divideTeamTitle();
         int capacity = teamsTitle.size();
         List<Team> teamList = new ArrayList<>(capacity);
-        String title = null;
         for (int i =0; i < capacity; i++){
             Team team = new Team(teamsTitle.get(i));
             teamList.add(team);

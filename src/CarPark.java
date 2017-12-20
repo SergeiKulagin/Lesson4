@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarPark {
-    private int carParkSizeLimit;
     private List<Car> carPark;
     private File carParkListOfNumbers;
 
@@ -15,42 +14,21 @@ public class CarPark {
         this.carParkListOfNumbers = carParkListOfNumbers;
     }
 
-    public int getCarParkSizeLimit() {
-        return carParkSizeLimit;
+    public CarPark() {
     }
 
-    public void setCarParkSizeLimit(int carParkSizeLimit) {
-        this.carParkSizeLimit = carParkSizeLimit;
+    public CarPark(int capacity) {
+        this.carPark = new ArrayList<>(capacity);
     }
 
     public void addCar(Car car) {
-        int carParkSize = carPark.size();
-        if (carParkSizeLimit > carParkSize) {
-            carPark.add(car);
-        } else {
-            System.out.println("There isn't free places");
-        }
+        carPark.add(car);
     }
 
-    public void removeCar(int numberPlace, String typeCar) {
+    public void removeCar(int numberPlace) {
         int carParkSize = carPark.size();
         if (numberPlace < carParkSize) {
-            Car car = carPark.get(numberPlace);
-            if (typeCar.equals("truck")) {
-                if (car instanceof TruckCar) {
-                    carPark.remove(numberPlace);
-                } else {
-                    System.out.println("There isn't a TruckCar");
-                }
-            } else {
-                if (typeCar.equals("auto")) {
-                    if (car instanceof AutoCar) {
-                        carPark.remove(numberPlace);
-                    } else {
-                        System.out.println("There isn't an AutoCar");
-                    }
-                }
-            }
+            carPark.remove(numberPlace);
         } else {
             System.out.println("There isn't any Cars");
         }

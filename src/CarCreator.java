@@ -22,20 +22,20 @@ public class CarCreator {
 
     public List<Car> createTeamCars() {
         List<Car> teamCars = new ArrayList<>();
-        List<String> cars = RaceFeatureUtils.divideTeamCarsNumbers();
-        while (cars != null) {
+        List<String> teamCarsNumbers = RaceFeatureUtils.divideTeamCarsNumbers();
+        while (teamCarsNumbers != null) {
             int i = 0;
-            RacingCar racingCar = new RacingCar(cars.get(i));
+            RacingCar racingCar = new RacingCar(teamCarsNumbers.get(i));
             teamCars.add(racingCar);
             int j = 1;
-            RacingCar racingCar1 = new RacingCar(cars.get(j));
+            RacingCar racingCar1 = new RacingCar(teamCarsNumbers.get(j));
             teamCars.add(racingCar1);
             int k = 2;
-            SupportCar supportCar = new SupportCar(cars.get(k));
+            SupportCar supportCar = new SupportCar(teamCarsNumbers.get(k));
             teamCars.add(supportCar);
-            cars.remove(k);
-            cars.remove(j);
-            cars.remove(i);
+            teamCarsNumbers.remove(k);
+            teamCarsNumbers.remove(j);
+            teamCarsNumbers.remove(i);
         }
         return teamCars;
     }

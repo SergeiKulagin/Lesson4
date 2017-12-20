@@ -3,7 +3,7 @@ public class BoxesZone extends CarPark {
     private Team team;
 
     public BoxesZone() {
-        super.setCarParkSizeLimit(3);
+        super(3);
     }
 
     public Team getTeam() {

@@ -1,6 +1,8 @@
 
 public class Team {
     private String teamTitle;
+    private int staffSize;
+    private int levelOfProfessionalism;
     private RacingCar firstTeamRacingCar;
     private RacingCar secondTeamRacingCar;
     private SupportCar teamSupportCar;
@@ -12,12 +14,33 @@ public class Team {
         this.teamTitle = teamTitle;
     }
 
+    public Team(int staffSize, int levelOfProfessionalism) {
+        this.staffSize = staffSize;
+        this.levelOfProfessionalism = levelOfProfessionalism;
+    }
+
     public String getTeamTitle() {
         return teamTitle;
     }
 
     public void setTeamTitle(String teamTitle) {
         this.teamTitle = teamTitle;
+    }
+
+    public int getStaffSize() {
+        return staffSize;
+    }
+
+    public void setStaffSize(int staffSize) {
+        this.staffSize = staffSize;
+    }
+
+    public int getLevelOfProfessionalism() {
+        return levelOfProfessionalism;
+    }
+
+    public void setLevelOfProfessionalism(int levelOfProfessionalism) {
+        this.levelOfProfessionalism = levelOfProfessionalism;
     }
 
     public RacingCar getFirstTeamRacingCar() {
