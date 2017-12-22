@@ -27,15 +27,15 @@ public class RaceFeatureUtils {
         return inputLine;
     }
 
-    public static int[] getCasualCharacteristicRacingCar (){
-        int [] listCharacteristic = new int[3];
-        for (int i = 0; i < 3; i++){
+    public static int[] getCasualCharacteristicRacingCar() {
+        int[] listCharacteristic = new int[3];
+        for (int i = 0; i < 3; i++) {
             Random randomCharacteristic = new Random();
             int random = randomCharacteristic.nextInt(10) + 1;
             listCharacteristic[i] = random;
         }
         return listCharacteristic;
-     }
+    }
 
     public static String createUniqueNumber() {
         Random random = new Random();
@@ -94,6 +94,7 @@ public class RaceFeatureUtils {
 
     public static List<String> divideTeamCarsNumbers() {
         List<String> infoAboutTeams = RaceFeatureUtils.readInfoFile();
+        //System.out.println(infoAboutTeams.get(3));
         List<String> teamTitles = RaceFeatureUtils.divideTeamTitle();
         for (String s : infoAboutTeams) {
             if (!RaceFeatureUtils.isaBoolean(teamTitles, s)) {
@@ -104,14 +105,42 @@ public class RaceFeatureUtils {
     }
 
     public static List<Team> createTeams() {
-        List <String> teamsTitle = RaceFeatureUtils.divideTeamTitle();
+        List<String> teamsTitle = RaceFeatureUtils.divideTeamTitle();
         int capacity = teamsTitle.size();
         List<Team> teamList = new ArrayList<>(capacity);
-        for (int i =0; i < capacity; i++){
+        for (int i = 0; i < capacity; i++) {
             Team team = new Team(teamsTitle.get(i));
             teamList.add(team);
         }
         return teamList;
+    }
+
+    public static String calculateRankCar(RacingCar racingCar, Team team) {
+        char category = RaceFeatureUtils.chooseCategory(team.getLevelOfProfessionalism());
+        int level = RaceFeatureUtils.chooseLevel(racingCar);
+        String one = Integer.toString(level);
+        String two = Character.toString(category);
+        String rankCar = two + one;
+        return rankCar;
+    }
+
+    private static char chooseCategory(int levelOfProfessionalism) {
+        char[] category = "ABC".toCharArray();
+        if ((0 < levelOfProfessionalism) && (levelOfProfessionalism <= 4)) {
+            return category[2];
+        } else {
+            if ((levelOfProfessionalism > 4) && (levelOfProfessionalism <= 7)) {
+                return category[1];
+            } else return category[0];
+        }
+    }
+
+    private static int chooseLevel(RacingCar racingCar) {
+        int aeroDynamics = racingCar.getAerodynamics();
+        int reliability = racingCar.getRacingCarReliability();
+        int power = racingCar.getEnginePower();
+        int level = (int) (reliability * power * aeroDynamics) - ((reliability + power) - aeroDynamics);
+        return Math.abs(level);
     }
 
     public static File writeFileWithNumbersOfCars(List<String> listCarNumbers) {

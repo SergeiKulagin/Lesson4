@@ -4,7 +4,7 @@ public class RacingCar extends AutoCar {
     private int aerodynamics;
     private int racingCarReliability;
     private int enginePower;
-    private char racingCarRank;
+    private String racingCarRank;
 
     public RacingCar() {
     }
@@ -45,11 +45,20 @@ public class RacingCar extends AutoCar {
         this.enginePower = enginePower;
     }
 
+    public String getRacingCarRank() {
+        return racingCarRank;
+    }
+
+    public void setRacingCarRank(String racingCarRank) {
+        this.racingCarRank = racingCarRank;
+    }
+
     public void setCasualCharacteristicRacingCar() {
         int[] listCharacteristic = RaceFeatureUtils.getCasualCharacteristicRacingCar();
         setAerodynamics(listCharacteristic[0]);
         setEnginePower(listCharacteristic[1]);
         setRacingCarReliability(listCharacteristic[2]);
+
     }
 
     public void toBeep() {

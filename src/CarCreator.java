@@ -23,6 +23,7 @@ public class CarCreator {
     public List<Car> createTeamCars() {
         List<Car> teamCars = new ArrayList<>();
         List<String> teamCarsNumbers = RaceFeatureUtils.divideTeamCarsNumbers();
+        //System.out.println(teamCarsNumbers.get(2));
         while (teamCarsNumbers != null) {
             int i = 0;
             RacingCar racingCar = new RacingCar(teamCarsNumbers.get(i));
@@ -38,5 +39,9 @@ public class CarCreator {
             teamCarsNumbers.remove(i);
         }
         return teamCars;
+    }
+
+    private void createSupportTypeForTeams (int teamsCount){
+
     }
 }

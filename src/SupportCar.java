@@ -4,8 +4,13 @@ public class SupportCar extends TruckCar {
 
     private List<String> kindOfSupport;
     private Team team;
+    private SupportType supportType;
 
     public SupportCar() {
+    }
+
+    public void setSupportType(SupportType supportType) {
+        this.supportType = supportType;
     }
 
     public SupportCar(String carNumber) {
