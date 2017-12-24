@@ -20,5 +20,6 @@ public class RaceFeature {
     String s = RaceFeatureUtils.calculateRankCar(r, t);
         System.out.println(s);
 
+
 }
 }
