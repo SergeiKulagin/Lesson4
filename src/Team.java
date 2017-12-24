@@ -6,6 +6,7 @@ public class Team {
     private RacingCar firstTeamRacingCar;
     private RacingCar secondTeamRacingCar;
     private SupportCar teamSupportCar;
+    private SupportType supportType;
 
     public Team() {
     }
@@ -17,6 +18,10 @@ public class Team {
     public Team(int staffSize, int levelOfProfessionalism) {
         this.staffSize = staffSize;
         this.levelOfProfessionalism = levelOfProfessionalism;
+    }
+
+    public void setSupportType(SupportType supportType) {
+        this.supportType = supportType;
     }
 
     public String getTeamTitle() {

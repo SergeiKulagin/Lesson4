@@ -23,7 +23,6 @@ public class CarCreator {
     public List<Car> createTeamCars() {
         List<Car> teamCars = new ArrayList<>();
         List<String> teamCarsNumbers = RaceFeatureUtils.divideTeamCarsNumbers();
-        //System.out.println(teamCarsNumbers.get(2));
         while (teamCarsNumbers != null) {
             int i = 0;
             RacingCar racingCar = new RacingCar(teamCarsNumbers.get(i));
@@ -41,7 +40,22 @@ public class CarCreator {
         return teamCars;
     }
 
-    private void createSupportTypeForTeams (int teamsCount){
-
+    public void createSupportTypeForTeams (int teamsCount){
+        List<SupportType> supportTypeList = new ArrayList<>();
+        SupportType[] types = SupportType.values();
+        String[] names = RaceFeatureUtils.readFile();
+        System.out.println(types[1].name());
+        System.out.println(names[7]);
+        System.out.println(names.length);
+        for (int i = 0; i < teamsCount; i++){
+        String name = names[i];
+        for (SupportType type : types){
+            if (type.name().equals(name)){
+                System.out.println(type.name());
+                supportTypeList.add(type);
+            }
+        }
+        }
+        System.out.println(supportTypeList.get(2).name());
     }
 }

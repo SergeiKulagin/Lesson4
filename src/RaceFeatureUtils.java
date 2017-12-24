@@ -83,6 +83,26 @@ public class RaceFeatureUtils {
         return infoAboutTeams;
     }
 
+    public static String[] readFile() {
+        ArrayList<String> infoAboutTeams = new ArrayList<>();
+        String folderPath = "C://Users//User//Desktop";
+        Path path = Paths.get(folderPath,"infoSupport.txt");
+        Charset charset = Charset.forName("UTF-8");
+        try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+               String[] infoTeams = line.split(";");
+               infoAboutTeams = new ArrayList<String>(Arrays.asList(infoTeams));
+            }
+        } catch (IOException e) {
+        }
+        String[] info = new String[infoAboutTeams.size()];
+        infoAboutTeams.toArray(info);
+        return info;
+    }
+
+
+
     public static List<String> divideTeamTitle() {
         List<String> infoAboutTeams = RaceFeatureUtils.readInfoFile();
         List<String> teamTitles = new ArrayList<>();
@@ -94,7 +114,6 @@ public class RaceFeatureUtils {
 
     public static List<String> divideTeamCarsNumbers() {
         List<String> infoAboutTeams = RaceFeatureUtils.readInfoFile();
-        //System.out.println(infoAboutTeams.get(3));
         List<String> teamTitles = RaceFeatureUtils.divideTeamTitle();
         for (String s : infoAboutTeams) {
             if (!RaceFeatureUtils.isaBoolean(teamTitles, s)) {
