@@ -7,6 +7,7 @@ public class Team {
     private RacingCar secondTeamRacingCar;
     private SupportCar teamSupportCar;
     private SupportType supportType;
+    private String legalAddress;
 
     public Team() {
     }
@@ -18,6 +19,14 @@ public class Team {
     public Team(int staffSize, int levelOfProfessionalism) {
         this.staffSize = staffSize;
         this.levelOfProfessionalism = levelOfProfessionalism;
+    }
+
+    public String getLegalAddress() {
+        return legalAddress;
+    }
+
+    public void setLegalAddress(String legalAddress) {
+        this.legalAddress = legalAddress;
     }
 
     public void setSupportType(SupportType supportType) {

@@ -13,10 +13,10 @@ public class RaceFeature {
    // List<Car> listTeamCars = carCreator.createTeamCars();
   //  carPark = CheckingSystem.registerCarsOfGuests(listGuestCars);
   //  teamBoxes = CheckingSystem.registerCarsOfTeam(listTeamCars);
-    carCreator.createSupportTypeForTeams(10);
+   // carCreator.createSupportTypeForTeams(10);
     RacingCar r = new RacingCar();
     r.setCasualCharacteristicRacingCar();
-    Team t = new Team(3, 8);
+    Team t = new Team(3, 2);
     String s = RaceFeatureUtils.calculateRankCar(r, t);
         System.out.println(s);
 
