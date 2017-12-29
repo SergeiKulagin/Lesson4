@@ -8,17 +8,21 @@ public class RaceFeature {
     CarPark carPark = new CarPark();
     List<BoxesZone> teamBoxes = new ArrayList<>();
     CarCreator carCreator = new CarCreator();
+    String[] d;
+    d = RaceFeatureUtils.readFile();
+        System.out.println(d[2]);
+    carCreator.createSupportTypeForTeams(10);
    // List<Car> listGuestCars = carCreator.createGuestCars();
    //     System.out.println(listGuestCars.size());
    // List<Car> listTeamCars = carCreator.createTeamCars();
   //  carPark = CheckingSystem.registerCarsOfGuests(listGuestCars);
   //  teamBoxes = CheckingSystem.registerCarsOfTeam(listTeamCars);
    // carCreator.createSupportTypeForTeams(10);
-    RacingCar r = new RacingCar();
-    r.setCasualCharacteristicRacingCar();
-    Team t = new Team(3, 2);
-    String s = RaceFeatureUtils.calculateRankCar(r, t);
-        System.out.println(s);
+   // RacingCar r = new RacingCar();
+    //r.setCasualCharacteristicRacingCar();
+   // Team t = new Team(3, 2);
+   // String s = RaceFeatureUtils.calculateRankCar(r, t);
+     //   System.out.println(s);
 
 
 }

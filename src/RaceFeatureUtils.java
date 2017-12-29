@@ -1,5 +1,6 @@
 import java.io.*;
 import java.nio.charset.Charset;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -84,8 +85,8 @@ public class RaceFeatureUtils {
 
     public static String[] readFile() {
         ArrayList<String> infoAboutTeams = new ArrayList<>();
-        String folderPath = "C://Users//User//Desktop";
-        Path path = Paths.get(folderPath,"infoSupport.txt");
+        String s = new File("Resources").getAbsolutePath();
+        Path path = Paths.get(s,"infoSupport.txt");
         Charset charset = Charset.forName("UTF-8");
         try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
             String line;
