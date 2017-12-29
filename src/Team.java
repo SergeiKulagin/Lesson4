@@ -1,4 +1,3 @@
-
 public class Team {
     private String teamTitle;
     private int staffSize;

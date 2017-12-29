@@ -1,6 +1,5 @@
 import java.io.*;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -162,27 +161,4 @@ public class RaceFeatureUtils {
         return Math.abs(level);
     }
 
-    public static File writeFileWithNumbersOfCars(List<String> listCarNumbers) {
-        File newFile = new File("C:\\Users\\User\\Desktop\\myFile.txt");
-        try {
-            if (!newFile.exists()) {
-                newFile.createNewFile();
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-        FileWriter writer;
-        try {
-            writer = new FileWriter(newFile);
-            for (String line : listCarNumbers) {
-                writer.write(line);
-                writer.write(System.getProperty("line.separator"));
-            }
-            writer.flush();
-            writer.close();
-        } catch (Exception e) {
-            Logger.getLogger(RaceFeatureUtils.class.getName()).log(Level.SEVERE, null, e);
-        }
-        return newFile;
-    }
 }

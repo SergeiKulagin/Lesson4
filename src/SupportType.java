@@ -4,7 +4,17 @@ public enum SupportType {
     ENGINE_TUNING ("VC-tuning","N20"),
     DRIVER_RELAXING ("ReX-dIr","massage");
 
+    private String name;
+    private String value;
+
     SupportType(String name, String value) {
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getValue() {
+        return value;
+    }
 }
