@@ -69,7 +69,7 @@ public class RaceFeatureUtils {
 
     public static List<String> readInfoFile() {
         ArrayList<String> infoAboutTeams = new ArrayList<>();
-        String folderPath = "C://Users//User//Desktop";
+        String folderPath = new File("Resources").getAbsolutePath();
         Path path = Paths.get(folderPath, "infoTeams.txt");
         Charset charset = Charset.forName("UTF-8");
         try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
@@ -85,16 +85,19 @@ public class RaceFeatureUtils {
 
     public static String[] readFile() {
         ArrayList<String> infoAboutTeams = new ArrayList<>();
-        String s = new File("Resources").getAbsolutePath();
-        Path path = Paths.get(s,"infoSupport.txt");
-        Charset charset = Charset.forName("UTF-8");
-        try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-               String[] infoTeams = line.split(";");
-               infoAboutTeams = new ArrayList<String>(Arrays.asList(infoTeams));
+        try {
+            String s = new File("Resources").getAbsolutePath();
+            Path path = Paths.get(s, "infoSupport.txt");
+            Charset charset = Charset.forName("UTF-8");
+            try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    String[] infoTeams = line.split(";");
+                    infoAboutTeams = new ArrayList<String>(Arrays.asList(infoTeams));
+                }
+            } catch (IOException e) {
             }
-        } catch (IOException e) {
+        } catch (NullPointerException e) {
         }
         String[] info = new String[infoAboutTeams.size()];
         infoAboutTeams.toArray(info);

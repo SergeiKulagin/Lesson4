@@ -9,9 +9,11 @@ public class RaceFeature {
     List<BoxesZone> teamBoxes = new ArrayList<>();
     CarCreator carCreator = new CarCreator();
     String[] d;
-    d = RaceFeatureUtils.readFile();
+    try {d = RaceFeatureUtils.readFile();
         System.out.println(d[2]);
-    carCreator.createSupportTypeForTeams(10);
+        carCreator.createSupportTypeForTeams(10);
+    } catch (NullPointerException e){}
+    TeamInfo teamInfo = new TeamInfo();
    // List<Car> listGuestCars = carCreator.createGuestCars();
    //     System.out.println(listGuestCars.size());
    // List<Car> listTeamCars = carCreator.createTeamCars();

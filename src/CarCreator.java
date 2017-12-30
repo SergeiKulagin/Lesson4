@@ -44,9 +44,6 @@ public class CarCreator {
         List<SupportType> supportTypeList = new ArrayList<>();
         SupportType[] types = SupportType.values();
         String[] names = RaceFeatureUtils.readFile();
-        System.out.println(types[1].getName());
-        System.out.println(names[7]);
-        System.out.println(names.length);
         for (int i = 0; i < teamsCount; i++){
         String name = names[i];
         for (SupportType type : types){
