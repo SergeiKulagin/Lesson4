@@ -8,6 +8,8 @@ public enum SupportType {
     private String value;
 
     SupportType(String name, String value) {
+        this.name = name;
+        this.value = value;
     }
 
     public String getName() {

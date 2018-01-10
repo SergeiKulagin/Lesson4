@@ -40,19 +40,17 @@ public class CarCreator {
         return teamCars;
     }
 
-    public void createSupportTypeForTeams (int teamsCount){
+    public void createSupportTypeForTeams(int teamsCount) {
         List<SupportType> supportTypeList = new ArrayList<>();
         SupportType[] types = SupportType.values();
         String[] names = RaceFeatureUtils.readFile();
-        for (int i = 0; i < teamsCount; i++){
-        String name = names[i];
-        for (SupportType type : types){
-            if (type.getName().equals(name)){
-                System.out.println(type.getName());
-                supportTypeList.add(type);
+        for (int i = 0; i < teamsCount; i++) {
+            String name = names[i];
+            for (SupportType type : types) {
+                if (type.getName().equals(name)) {
+                    supportTypeList.add(type);
+                }
             }
         }
-        }
-        System.out.println(supportTypeList.get(2).getName());
     }
 }

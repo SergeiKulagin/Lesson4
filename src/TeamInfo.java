@@ -5,46 +5,46 @@ import java.util.Map;
 
 public class TeamInfo {
 
-    private static Map<Team, String> teamStringMap = new HashMap<>();
+    private static Map<Team, String> teamInfoMap = new HashMap<>();
 
-    private void addTeamInfo(Team team) {
-        if (!teamStringMap.containsKey(team)) {
-            teamStringMap.put(team, team.getLegalAddress());
+    public void addTeamInfo(Team team) {
+        if (!teamInfoMap.containsKey(team)) {
+            teamInfoMap.put(team, team.getLegalAddress());
         } else System.out.println("Team's information has been changed");
     }
 
-    private void removeTeamInfo(Team team) {
-        if (teamStringMap.containsKey(team)) {
-            teamStringMap.remove(team);
+    public void removeTeamInfo(Team team) {
+        if (teamInfoMap.containsKey(team)) {
+            teamInfoMap.remove(team);
         } else System.out.println("There isn't this team");
     }
 
-    private void removeAllInfo() {
-        if (!teamStringMap.isEmpty()) {
-            teamStringMap.clear();
+    public void removeAllInfo() {
+        if (!teamInfoMap.isEmpty()) {
+            teamInfoMap.clear();
         }
     }
 
-    private void updateTeamInfo(Team team, String legalAddress) {
+    public void updateTeamInfo(Team team, String legalAddress) {
         String oldAddress = team.getLegalAddress();
         if (!oldAddress.equals(legalAddress)) {
-            teamStringMap.replace(team, legalAddress);
+            teamInfoMap.replace(team, legalAddress);
             team.setLegalAddress(legalAddress);
         } else System.out.println("Team's information has not changed");
     }
 
-    private String chooseLongestAddress() {
+    public String chooseLongestAddress() {
         Team team = new Team();
         String legalAddress = "";
         List<Integer> length = new ArrayList<>();
-        for (Map.Entry<Team, String> entry : teamStringMap.entrySet()) {
+        for (Map.Entry<Team, String> entry : teamInfoMap.entrySet()) {
             String address = entry.getValue();
             if ((address != null) && (address.length() > legalAddress.length())) {
                 legalAddress = address;
                 team = entry.getKey();
             }
         }
-        return teamStringMap.get(team);
+        return teamInfoMap.get(team);
     }
 }
 
